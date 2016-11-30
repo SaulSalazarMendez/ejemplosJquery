@@ -1,0 +1,40 @@
+<html>
+<head>
+<script src="jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#yolo').click(function() {
+       var algo = $("#algo").val();
+       var id = $("#iden").val(),
+           mocos = $("#mocos").val();
+
+       $('#myTable tbody').append(
+          '<tr id="'+id+'"><td>'+algo+'</td><td>'+mocos+'</td></tr>');
+    });
+
+    $('#editar').click(function() {
+       var algo = $("#algo").val();
+       var id = $("#iden").val();
+       var mocos = $("#mocos").val();
+
+       $('#'+id).html(
+          '<td>'+algo+'</td>'+
+          '<td>'+mocos+'</td>');
+    });
+});
+</script>
+<title></title>
+</head>
+<body>
+  <input id="iden" type="text">
+  <input id="algo" type="text">  
+  <input id="mocos" type='text'>
+<a id="yolo" href="javascript:void(0);">Link</a>
+<a id="editar" href="javascript:void(0);">Editar</a>
+<table id="myTable">
+  <tbody>
+
+  </tbody>
+</table>
+</body>
+</html>
