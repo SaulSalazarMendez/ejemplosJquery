@@ -3,13 +3,14 @@
 <script src="jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#yolo').click(function() {
+    $('#add').click(function() {
        var algo = $("#algo").val();
        var id = $("#iden").val(),
            mocos = $("#mocos").val();
 
        $('#myTable tbody').append(
           '<tr id="'+id+'"><td>'+algo+'</td><td>'+mocos+'</td></tr>');
+        console.log("se AGREEGO fila");
     });
 
     $('#editar').click(function() {
@@ -20,17 +21,27 @@ $(document).ready(function() {
        $('#'+id).html(
           '<td>'+algo+'</td>'+
           '<td>'+mocos+'</td>');
+        console.log("se EDITO fila");
     });
+
+    $('#eliminar').click(function() {
+       var id = $("#iden").val();
+
+       $('#'+id).remove();
+       console.log("se REMOVIO fila");
+    });
+
 });
 </script>
 <title></title>
 </head>
 <body>
   <input id="iden" type="text">
-  <input id="algo" type="text">  
+  <input id="algo" type="text">
   <input id="mocos" type='text'>
-<a id="yolo" href="javascript:void(0);">Link</a>
-<a id="editar" href="javascript:void(0);">Editar</a>
+<a id="add" href="#">Agregar</a>
+<a id="editar" href="#">Editar</a>
+<a id="eliminar" href="#">Eliminar</a>
 <table id="myTable">
   <tbody>
 
